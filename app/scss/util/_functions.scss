@@ -7,3 +7,11 @@
 		@error "rem() expects a unitless number, received '#{$pixel}'";
 	}
 }
+
+@function em($pixel) {
+	@if math.is-unitless($pixel) {
+		@return math.div($pixel, 16) + em;
+	} @else {
+		@error "em() expects a unitless number, received '#{$pixel}'";
+	}
+}
