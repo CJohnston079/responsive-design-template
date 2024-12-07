@@ -19,7 +19,7 @@
 	}
 
 	&__main {
-		background-color: hsl(240, 99%, 33%);
+		// background-color: hsl(240, 99%, 33%);
 	}
 
 	&__sidebar {
@@ -30,6 +30,5 @@
 
 	&__widget {
 		padding: u.rem(16);
-		background-color: hsl(300, 100%, 30%);
 	}
 }
