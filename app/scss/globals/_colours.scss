@@ -1,6 +1,26 @@
 :root {
-	--background-colour: hsl(0, 0%, 11%);
-	--text-colour: hsl(0, 0%, 100%);
+	--main-bg: hsl(0, 0%, 100%);
+	--text-dark: hsl(233, 14%, 25%);
+	--text-light: hsl(0, 0%, 100%);
+	--hero-bg: hsl(232, 58%, 55%);
+	--btn-primary-bg: hsl(180, 100%, 42%);
+	--btn-primary-text: hsl(233, 14%, 25%);
+	--btn-secondary-bg: transparent;
+	--btn-secondary-border: hsl(0, 0%, 0%);
+	--btn-secondary-text: hsl(0, 0%, 0%);
+	--fullwidth-bg: hsl(320, 85%, 41%);
+	--cta-desktop: linear-gradient(
+		90deg,
+		hsl(233, 14%, 25%) 0%,
+		hsl(232, 58%, 55%) 56.34%,
+		hsl(180, 100%, 42%) 112.47%
+	);
+	--cta-mobile: linear-gradient(
+		90deg,
+		hsl(233, 14%, 25%) 0%,
+		hsl(232, 58%, 55%) 76.28%,
+		hsl(180, 100%, 42%) 152.428%
+	);
 }
 
 .magenta {
