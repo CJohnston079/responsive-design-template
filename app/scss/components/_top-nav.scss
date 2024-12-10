@@ -1,0 +1,35 @@
+@use "../util" as u;
+
+.top-nav {
+	background-color: var(--header-bg);
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: 20px;
+	}
+
+	&__logo {
+		display: block;
+	}
+
+	&__links {
+		display: flex;
+		gap: 40px;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		list-style-type: none;
+	}
+
+	&__link {
+		font-size: u.rem(16);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--text-light);
+	}
+}
