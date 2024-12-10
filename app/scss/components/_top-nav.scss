@@ -10,6 +10,12 @@
 		padding-block: 20px;
 	}
 
+	&__home-link {
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+
 	&__logo {
 		display: block;
 	}
@@ -31,5 +37,11 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		color: var(--text-light);
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 4px;
+		}
 	}
 }
