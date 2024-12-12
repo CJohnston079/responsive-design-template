@@ -5,10 +5,13 @@
 	--header-bg: hsl(232, 58%, 55%);
 	--hero-bg: hsl(232, 58%, 55%);
 	--btn-primary-bg: hsl(180, 100%, 42%);
+	--btn-primary-bg-hover: hsl(180, 100%, 37%);
 	--btn-primary-text: hsl(233, 14%, 25%);
 	--btn-secondary-bg: transparent;
-	--btn-secondary-border: hsl(0, 0%, 0%);
-	--btn-secondary-text: hsl(0, 0%, 0%);
+	--btn-secondary-bg-hover: hsl(0, 0%, 100%);
+	--btn-secondary-border: hsl(0, 0%, 100%);
+	--btn-secondary-text: hsl(0, 0%, 100%);
+	--btn-secondary-text-hover: var(--hero-bg);
 	--fullwidth-bg: hsl(320, 85%, 41%);
 	--cta-desktop: linear-gradient(
 		90deg,
@@ -20,7 +23,7 @@
 		90deg,
 		hsl(233, 14%, 25%) 0%,
 		hsl(232, 58%, 55%) 76.28%,
-		hsl(180, 100%, 42%) 152.428%
+		hsl(180, 100%, 42%) 152.28%
 	);
 }
 
