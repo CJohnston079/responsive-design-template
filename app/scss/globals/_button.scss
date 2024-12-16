@@ -15,12 +15,21 @@
 
 	&.primary {
 		border: u.rem(2) solid var((--btn-primary-bg));
-		color: var(--btn-primary-text);
 		background-color: var(--btn-primary-bg);
 
 		&:hover {
 			border-color: var(--btn-primary-bg-hover);
 			background-color: var(--btn-primary-bg-hover);
+		}
+
+		&.white {
+			border: u.rem(2) solid var((--btn-primary-white-bg));
+			background-color: var(--btn-primary-white-bg);
+
+			&:hover {
+				border: u.rem(2) solid var((--btn-primary-white-bg-hover));
+				background-color: var(--btn-primary-white-bg-hover);
+			}
 		}
 	}
 
