@@ -25,6 +25,23 @@
 		}
 	}
 
+	&__overlay {
+		@include u.breakpoint-down(small) {
+			position: fixed;
+			inset: 0;
+			background-color: var(--menu-overlay);
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 400ms ease-in-out;
+
+			&:has(+ [aria-expanded="true"]) {
+				opacity: 1;
+				transition: opacity 200ms ease-in-out;
+				pointer-events: all;
+			}
+		}
+	}
+
 	&__open,
 	&__close {
 		background: none;
