@@ -33,17 +33,29 @@
 					/>
 				</a>
 				<nav>
-					<ul class="top-nav__links">
-						<li class="top-nav__item">
-							<a href="" class="top-nav__link">Features</a>
-						</li>
-						<li class="top-nav__item">
-							<a href="" class="top-nav__link">Pricing</a>
-						</li>
-						<li class="top-nav__item">
-							<a href="" class="top-nav__link">About</a>
-						</li>
-					</ul>
+					<span id="nav-label" hidden>Navigation</span>
+					<button class="top-nav__open" aria-expanded="false" aria-labelledby="nav-label">
+						<img src="img/hamburger.svg" alt="" width="30" height="23" />
+					</button>
+					<div class="top-nav__menu" role="dialog" aria-labelledby="nav-label">
+						<button class="top-nav__close">
+							<img src="img/close-button.svg" alt="" width="26" height="26" />
+						</button>
+						<ul class="top-nav__links">
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">Home</a>
+							</li>
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">Features</a>
+							</li>
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">Pricing</a>
+							</li>
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">About</a>
+							</li>
+						</ul>
+					</div>
 				</nav>
 			</div>
 		</header>
