@@ -1,7 +1,14 @@
 @use "../util" as u;
 
 .top-nav {
-	background-color: var(--header-bg);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+
+	&,
+	&__menu {
+		background-color: var(--header-bg);
+	}
 
 	&__wrapper {
 		display: flex;
@@ -22,22 +29,93 @@
 		}
 	}
 
+	&__overlay {
+		@include u.breakpoint-down(small) {
+			position: fixed;
+			inset: 0;
+			background-color: var(--menu-overlay);
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity ease-in-out;
+
+			&:has(+ [aria-expanded="true"]) {
+				opacity: 1;
+				transition: opacity 200ms ease-in-out;
+				pointer-events: all;
+			}
+		}
+	}
+
+	&__open,
+	&__close {
+		background: none;
+		padding: 0;
+		border: 0;
+	}
+
+	&__open {
+		@include u.breakpoint(medium) {
+			display: none;
+		}
+
+		&[aria-expanded="true"] + .top-nav__menu {
+			translate: 0 0;
+
+			@media (prefers-reduced-motion) {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__menu {
+		@include u.breakpoint-down(small) {
+			position: fixed;
+			inset: 0 0 auto 0;
+			border-radius: 0 0 20px 20px;
+			padding: 12px 24px 120px;
+			box-shadow: 0 12px 12px var(--menu-shadow);
+			translate: 0 -106%;
+			transition: translate ease-in-out;
+
+			@media (prefers-reduced-motion) {
+				translate: 0;
+				opacity: 0;
+				transition-property: opacity;
+			}
+		}
+	}
+
+	&__close {
+		display: none;
+
+		@include u.breakpoint-down(small) {
+			display: block;
+			margin-block-end: 84px;
+			margin-inline-start: auto;
+		}
+	}
+
 	&__links {
 		display: flex;
-		gap: 20px;
+		gap: 40px;
 
-		@include u.breakpoint(large) {
-			gap: 40px;
+		@include u.breakpoint-down(small) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__item:first-child {
+		@include u.breakpoint(medium) {
+			display: none;
 		}
 	}
 
 	&__link {
 		display: block;
-		font-size: u.rem(14);
+		font-size: u.rem(20);
 		font-weight: 700;
 		line-height: 1;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
 		color: var(--text-light);
 
 		&::after {
@@ -46,16 +124,22 @@
 			margin-block-start: 3px;
 			height: 3px;
 			background: linear-gradient(to right, var(--link-gradient1), var(--link-gradient2) 82%);
-			// opacity: 0;
+			opacity: 0;
 			transition: opacity 250ms ease-in-out;
+
+			@include u.breakpoint-down(small) {
+				display: none;
+			}
 		}
 
 		&:hover::after {
 			opacity: 1;
 		}
 
-		@include u.breakpoint(large) {
+		@include u.breakpoint(medium) {
 			font-size: u.rem(16);
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
 		}
 	}
 }

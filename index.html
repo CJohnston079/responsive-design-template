@@ -33,21 +33,39 @@
 					/>
 				</a>
 				<nav>
-					<ul class="top-nav__links">
-						<li class="top-nav__item">
-							<a href="" class="top-nav__link">Features</a>
-						</li>
-						<li class="top-nav__item">
-							<a href="" class="top-nav__link">Pricing</a>
-						</li>
-						<li class="top-nav__item">
-							<a href="" class="top-nav__link">About</a>
-						</li>
-					</ul>
+					<span id="nav-label" hidden>Navigation</span>
+					<div id="overlay" class="top-nav__overlay"></div>
+					<button
+						id="btnOpen"
+						class="top-nav__open"
+						aria-expanded="false"
+						aria-labelledby="nav-label"
+					>
+						<img src="img/hamburger.svg" alt="" width="30" height="23" />
+					</button>
+					<div id="menuTopNav" class="top-nav__menu" role="dialog" aria-labelledby="nav-label">
+						<button id="btnClose" class="top-nav__close">
+							<img src="img/close-button.svg" alt="" width="26" height="26" />
+						</button>
+						<ul class="top-nav__links">
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">Home</a>
+							</li>
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">Features</a>
+							</li>
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">Pricing</a>
+							</li>
+							<li class="top-nav__item">
+								<a href="" class="top-nav__link">About</a>
+							</li>
+						</ul>
+					</div>
 				</nav>
 			</div>
 		</header>
-		<main>
+		<main id="main">
 			<article>
 				<section class="hero fb-wrapper">
 					<img
@@ -262,7 +280,7 @@
 				</section>
 			</article>
 		</main>
-		<footer class="footer">
+		<footer id="footer" class="footer">
 			<h2 class="visually-hidden">Footer</h2>
 			<div class="footer__wrapper wrapper">
 				<section class="footer__logo">
