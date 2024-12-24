@@ -1,4 +1,6 @@
 import "./app/scss/style.scss";
+import { enableBodyScroll } from "body-scroll-lock";
+import { disableBodyScroll } from "body-scroll-lock";
 
 console.log("Hello world!");
 
@@ -21,11 +23,13 @@ const openMobileMenu = function () {
 	menuTopNav.removeAttribute("inert");
 	menuTopNav.style.transitionDuration = "400ms";
 	overlay.style.transitionDuration = "400ms";
+	disableBodyScroll(menuTopNav);
 };
 
 const closeMobileMenu = function () {
 	btnOpen.setAttribute("aria-expanded", "false");
 	menuTopNav.setAttribute("inert", "");
+	enableBodyScroll(menuTopNav);
 
 	setTimeout(() => {
 		menuTopNav.removeAttribute("style");
