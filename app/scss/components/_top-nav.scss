@@ -60,6 +60,10 @@
 
 		&[aria-expanded="true"] + .top-nav__menu {
 			translate: 0 0;
+
+			@media (prefers-reduced-motion) {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -70,9 +74,14 @@
 			border-radius: 0 0 20px 20px;
 			padding: 12px 24px 120px;
 			box-shadow: 0 12px 12px var(--menu-shadow);
-
 			translate: 0 -106%;
 			transition: translate ease-in-out;
+
+			@media (prefers-reduced-motion) {
+				translate: 0;
+				opacity: 0;
+				transition-property: opacity;
+			}
 		}
 	}
 

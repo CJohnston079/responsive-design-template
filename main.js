@@ -2,8 +2,8 @@ import "./app/scss/style.scss";
 import { enableBodyScroll } from "body-scroll-lock";
 import { disableBodyScroll } from "body-scroll-lock";
 
-console.log("Hello world!");
-
+const main = document.querySelector("#main");
+const footer = document.querySelector("#footer");
 const btnOpen = document.querySelector("#btnOpen");
 const btnClose = document.querySelector("#btnClose");
 const menuTopNav = document.querySelector("#menuTopNav");
@@ -21,15 +21,21 @@ const setupTopNav = () => {
 const openMobileMenu = function () {
 	btnOpen.setAttribute("aria-expanded", "true");
 	menuTopNav.removeAttribute("inert");
+	main.setAttribute("inert", "");
+	footer.setAttribute("inert", "");
 	menuTopNav.style.transitionDuration = "400ms";
 	overlay.style.transitionDuration = "400ms";
 	disableBodyScroll(menuTopNav);
+	btnClose.focus();
 };
 
 const closeMobileMenu = function () {
 	btnOpen.setAttribute("aria-expanded", "false");
 	menuTopNav.setAttribute("inert", "");
+	main.removeAttribute("inert");
+	footer.removeAttribute("inert");
 	enableBodyScroll(menuTopNav);
+	btnOpen.focus();
 
 	setTimeout(() => {
 		menuTopNav.removeAttribute("style");
