@@ -32,7 +32,7 @@
 			background-color: var(--menu-overlay);
 			opacity: 0;
 			pointer-events: none;
-			transition: opacity 400ms ease-in-out;
+			transition: opacity ease-in-out;
 
 			&:has(+ [aria-expanded="true"]) {
 				opacity: 1;
@@ -50,6 +50,10 @@
 	}
 
 	&__open {
+		@include u.breakpoint(medium) {
+			display: none;
+		}
+
 		&[aria-expanded="true"] + .top-nav__menu {
 			translate: 0 0;
 		}
@@ -64,7 +68,7 @@
 			box-shadow: 0 12px 12px var(--menu-shadow);
 
 			translate: 0 -106%;
-			transition: translate 400ms ease-in-out;
+			transition: translate ease-in-out;
 		}
 	}
 
@@ -85,6 +89,12 @@
 		@include u.breakpoint-down(small) {
 			flex-direction: column;
 			align-items: center;
+		}
+	}
+
+	&__item:first-child {
+		@include u.breakpoint(medium) {
+			display: none;
 		}
 	}
 
