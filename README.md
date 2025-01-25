@@ -1,6 +1,6 @@
 # Responsive design template
 
-This repository serves as a general referencefor writing responsive and accessible websites in Sass with the BEM methodology. This repository has examples of:
+This repository serves as a general reference for writing responsive and accessible websites in Sass with the BEM methodology. This repository has examples of:
 
 - Writing efficient, modular and maintainable styles with BEM, Sass partials, mixins, CSS custom properties and helper/utility classes.
 - Using appropriate semantic HTML tags.
